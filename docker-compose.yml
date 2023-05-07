@@ -5,7 +5,7 @@ services:
     restart: always
     build: .
     ports:
-      - 5678
+      - "9090:5678"
     depends_on:
       - db
   db:
@@ -13,7 +13,7 @@ services:
     restart: always
     volumes:
       - /opt/docker_volumes/db_consulta_credito:/var/lib/postgresql/data
-    ports:
-      - "5555:5432"
+#    ports:
+#      - "5555:5432"
     environment:
       - POSTGRES_PASSWORD=123456

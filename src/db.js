@@ -4,7 +4,7 @@ const sequelize = new Sequelize({
   //dialect: 'sqlite',
   dialect: 'postgres',
   host: 'db',
-  port: 5555,
+  port: 5432,
   database: 'consulta_credito',
   username: 'postgres',
   password: '123456',
