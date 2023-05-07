@@ -5,3 +5,10 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -d -p 5555:5432 -v /
 create database consulta_credito
 
 docker system prune --volumes
+
+
+
+
+docker network inspect bridge
+//docker build .
+docker build -t node_consulta_credito .
