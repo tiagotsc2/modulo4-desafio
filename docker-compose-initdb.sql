@@ -1,0 +1,1 @@
+CREATE DATABASE consulta_credito;
