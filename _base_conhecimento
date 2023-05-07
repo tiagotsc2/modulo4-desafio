@@ -1,3 +1,7 @@
 docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -d -p 5555:5432 postgres
 
+docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -d -p 5555:5432 -v /opt/volume_postgres:/var/lib/postgresql/data postgres
+
+create database consulta_credito
+
 docker system prune --volumes
