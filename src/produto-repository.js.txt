@@ -1,0 +1,62 @@
+//import Produto from "./db";
+const db = require("./db");
+
+async function insertProduto(produto) {
+    try {
+        return await Produto.create(produto);
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function getProdutos() {
+    try {
+        return await Produto.findAll();
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function getProduto(id) {
+    try {
+        return await Produto.findByPk(id);
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function deleteProduto(id) {
+    try {
+        await Produto.destroy({
+            where: {
+                produtoId: id
+            }
+        });
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function updateProduto(produto) {
+    try {
+        await Produto.update(produto, {
+            where: {
+                produtoId: produto.produtoId
+            }
+        });
+        return await getProduto(produto.produtoId);
+    } catch (err) {
+        throw err;
+    }
+}
+
+
+
+
+module.exports = {
+  insertProduto,
+  getProdutos,
+  getProduto,
+  updateProduto,
+  deleteProduto
+};
