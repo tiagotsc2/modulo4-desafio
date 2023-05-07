@@ -14,7 +14,7 @@ services:
     volumes:
       - /opt/docker_volumes/db_consulta_credito:/var/lib/postgresql/data
       - ./docker-compose-initdb.sql:/docker-entrypoint-initdb.d/docker-compose-initdb.sql
-#    ports:
-#      - "5555:5432"
+    ports:
+      - "5555:5432"
     environment:
       - POSTGRES_PASSWORD=123456
